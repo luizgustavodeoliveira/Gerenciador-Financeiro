@@ -1,0 +1,204 @@
+/* Reset básico e variáveis para fácil manutenção */
+:root {
+    --cor-fundo: #e4e4e4;
+    --cor-branco: #FFF;
+    --cor-primaria: #5566c5;
+    --cor-hover-primaria: #3b4ba7;
+    --cor-borda: #ddd; /* Troca do preto puro por um cinza suave */
+    --sombra-padrao: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho dos elementos */
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: sans-serif; /* Define a fonte globalmente */
+}
+
+/* Garante que inputs e botões herdem a fonte do body */
+input, button, select, label {
+    font-family: inherit;
+}
+
+#sec-titulo {
+    padding: 2rem;
+    background-color: var(--cor-branco);
+    box-shadow: var(--sombra-padrao);
+}
+
+#sec-titulo h1 {
+    font-size: 3.5rem;
+}
+
+/* Layout dos cards de resumo */
+#sec-cards {
+    margin-top: 3rem;
+    height: 15rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-class {
+    background-color: var(--cor-branco);
+    width: 27%;
+    height: 76%;
+    border-radius: 2rem;
+    transition: all 0.2s ease; /* Transição mais suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombra-padrao);
+}
+
+.card-class:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Efeito visual de levante */
+}
+
+.card-class h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+}
+
+.card-class p, span {
+    font-size: 3rem;
+}
+
+/* Cores dinâmicas dos cards */
+#card-entradas { background-color: #5bc55b; }
+#card-entradas:hover { background-color: #3db13d; }
+
+#card-saidas { background-color: #df7979; }
+#card-saidas:hover { background-color: #ce6565; }
+
+#card-balanco { background-color: #dddd74; }
+#card-balanco:hover { background-color: #d3d361; }
+
+.titulo-card {
+    color: var(--cor-branco);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de Formulário e Tabela lado a lado */
+#sec-boxes {
+    margin: 3rem 2rem;
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sec-cadastro {
+    background-color: var(--cor-branco);
+    width: 28%;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: var(--sombra-padrao);
+}
+
+.div-box {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.div-box span {
+    font-size: 2.2rem;
+}
+
+.div-box input {
+    width: 70%;
+    height: 3rem;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+}
+
+#btn-add-transacao {
+    background-color: var(--cor-primaria);
+    width: 100%;
+    height: 4rem;
+    color: var(--cor-branco);
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#btn-add-transacao:hover {
+    background-color: var(--cor-hover-primaria);
+}
+
+/* Histórico de Transações */
+#sec-historico {
+    padding: 2rem;
+    width: 68%;
+    background-color: var(--cor-branco);
+    border-radius: 2rem;
+    box-shadow: var(--sombra-padrao);
+
+    font-size: 1.7rem;
+}
+
+#table-container {
+    max-height: 30rem;
+    overflow-y: auto;
+    border: 1px solid var(--cor-borda);
+    border-radius: 1rem;
+    margin-top: 1.9rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Fixa o cabeçalho no topo durante o scroll */
+th {
+    position: sticky;
+    top: 0;
+    background-color: #eee;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+    z-index: 2;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+td {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Alinhamento flexbox dentro da célula de descrição */
+.embrulho-td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.span-delete {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: all 0.2s;
+}
+
+.span-delete:hover {
+    background-color: #df7979;
+    color: white;
+}
